@@ -50,6 +50,10 @@ SOURCES = source/ud_usage_data.cpp \
 # Libraries
 #
 
+defined(SETTINGS_PRI, var) {
+    include($${SETTINGS_PRI})
+}
+
 INCLUDEPATH += $${INECRYPTO_INCLUDE}
 INCLUDEPATH += $${INEWH_INCLUDE}
 

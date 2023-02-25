@@ -67,6 +67,10 @@ win32 {
 # Libraries
 #
 
+defined(SETTINGS_PRI, var) {
+    include($${SETTINGS_PRI})
+}
+
 INCLUDEPATH += $${INECRYPTO_INCLUDE}
 INCLUDEPATH += $${INEWH_INCLUDE}
 INCLUDEPATH += $${BOOST_INCLUDE}
