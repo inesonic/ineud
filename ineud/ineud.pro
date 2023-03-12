@@ -61,6 +61,18 @@ LIBS += -L$${INECRYPTO_LIBDIR} -linecrypto
 LIBS += -L$${INEWH_LIBDIR} -linewh
 
 ########################################################################################################################
+# Operating System
+#
+
+win32 {
+    defined(SETTINGS_PRI, var) {
+        include($${SETTINGS_PRI})
+    }
+
+    LIBS += "$${WINDOWS_KIT_LIBDIR}/AdvAPI32.Lib"
+}
+
+########################################################################################################################
 # Locate build intermediate and output products
 #
 
