@@ -94,6 +94,15 @@ namespace Ud {
     UsageData::~UsageData() {}
 
 
+    bool UsageData::isConfigured() const {
+        currentSettings->beginGroup(currentSettingsGroup);
+        bool result = currentSettings->contains("secret");
+        currentSettings->endGroup();
+
+        return result;
+    }
+
+
     bool UsageData::reportingEnabled() const {
         return enabled;
     }
@@ -275,8 +284,7 @@ namespace Ud {
             }
 
             scheduleReport(nextOperation);
-            }
-        else if (enabled && !nowEnabled) {
+        } else if (enabled && !nowEnabled) {
             timer->stop();
         }
 

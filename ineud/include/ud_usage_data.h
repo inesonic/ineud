@@ -152,6 +152,15 @@ namespace Ud {
             ~UsageData() override;
 
             /**
+             * Method you can use to determine if usage data has been configured.  Call this method before calling
+             * \ref loadSettings.
+             *
+             * \return Returns true if usage data as been configured (and possibly disabled).  Returns false if usage
+             *         data has not been configured.
+             */
+            bool isConfigured() const;
+
+            /**
              * Determines if reporting is enabled.
              *
              * \return Returns true if reporting is enabled.  Returns false if reporting is disabled.
